@@ -1,3 +1,6 @@
+<details>
+<summary>Readme Laboratoria</summary>
+
 # Data Lovers
 
 ## Índice
@@ -605,3 +608,70 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 * [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [ ] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
+
+
+
+</details>
+
+<details>
+<summary>Readme WebApp Gabriela Mistral</summary>
+
+## Cifrado César
+
+## Índice
+
+* [1. Introducción](#1-introducción)
+* [2. Consideraciones generales](#2-consideraciones-generales)
+* [3. Prototipo](#3-prototipo)
+* [4. Planificación](#4-planificación)
+* [5. Usuarios](#5-usuarios)
+* [6. Link del proyecto](#6-link-proyecto)
+
+***
+## 1. Introducción
+
+El cifrado césar es una de las técnicas más simples para cifrar un mensaje. Es
+un tipo de cifrado por sustitución, es decir que cada letra del texto original
+es reemplazada por otra que se encuentra un número fijo de posiciones
+(desplazamiento) más adelante en el mismo alfabeto.
+El objetivo del desafío propuesto por Laboratoria, fue el crear una aplicación web que permita cifrar y descifrar mensajes a través de inputs en donde el usuario pueda ingresar datos en una ventana y pulsar un botón que llame a una función contenida en un archivo de Javascript.
+
+## 2. Consideraciones generales
+
+Como dupla, decidimos que le queríamos dar un concepto más profundo a la temática a utilizar para el cifrado. Es por ello que tomamos la determinación de realizar una página homenaje a Gabriela Mistral, poetisa Chilena, en donde se pudieran descifrar las cartas que le envió a su pareja Doris Dana. La finalidad de nuestra aplicación web es rendir homenaje de este personaje histórico con la finalidad de subsanar esta deuda histórica que mantiene el país para con la poetisa.
+
+## 3. Prototipo
+
+En primera instancia, ideamos un landing que tuviera como temática un homenaje a Gabriela Mistral y Doris Dana.
+Sin embargo, al recibir feedback de las coach y de las compañeras de Laboratoria, fuimos refinando nuestros prototipos disminuyendo la cantidad de texto, ya que parecía más una página biográfica más que una página para revelar un cifrado.
+
+*Prototipo Landing*
+<br>
+![](src/img/Prototipo_1.png) 
+
+Nuestra segunda ventana, en donde debían ir los inputs para cifrar y descifrar contenían un poema. Como se puede apreciar en este prototipo, sólo teníamos una idea básica de lo que queríamos lograr, sin tanta funcionalidad real. Con el paso de los sprint, pudimos aterrizar mejor la idea y centrarnos en el cifrado y descifrado de la cartas de amor.
+
+*Prototipo Cifrado*
+<br>
+![](src/img/Prototipo_2.png)
+
+## 4. Planificación
+
+Respecto a la planificación de nuestros sprints, dividimos la carga de trabajo en 3 sprints.
+En el sprint 1, tuvimos como objetivo crear los prototipos en Figma y crear un esqueleto en HTML/CSS.
+En el sprint 2, tuvimos como objetivo crear la ventana de cifrado e implementar funciones en Javascript.
+En el sprint 3,  tuvimos como objetivo terminar las funciones de Javascript, realizar la hacker edition y afinar detalles de nuestro archivo CSS.
+
+A continuación, podrán consultar nuestro tablero en Trello en donde pudimos organizar las tareas semanales:
+
+https://trello.com/b/bwZY2Uhn/caesar-cipher
+
+## 5. Usuarios
+
+Nuestro usuario objetivo está concentrado en todo tipo de público que esté interesado en la historia de Chile, literatura o cultura general, haciendo amplio el espectro de usuarios que podrían interesarse en la temática.
+El grado de alfabetización digital que tendrían que tener los usuarios es bajo, ya que la página no resulta compleja de utilizar ni se necesitan altos niveles de conocimiento en navegación web para ser utilizada.
+
+## 6. Link del proyecto
+https://claudgomezg.github.io/SCL018-cipher/src/
+<br>
+https://yesvrv.github.io/SCL018-cipher/src/
