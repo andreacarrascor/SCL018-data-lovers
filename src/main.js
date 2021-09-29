@@ -4,24 +4,23 @@ import orderData from './data.js'
 let printFilm = data.films
 
 const movieList = function (films) {
-  let list = ''
-  document.getElementById('filmCard').innerHTML = ''
+    let list = ''
+    document.getElementById('filmCard').innerHTML = ''
 
-  for (let i = 0; i < films.length; i++) {
-    list += `
+    for (let i = 0; i < films.length; i++) {
+        list += `
     <section class="filmsContainer">
-      <figure class="cardImage">
+    <figure class="cardImage">
         <img alt="Poster" id="poster" class="poster" src="${films[i].poster}">
-      </figure>
-      <section class="cardContainer-inner">
+    </figure>
+    <section class="cardContainer-inner">
         <h2 id="title" class="cardTitle">${films[i].title}</h2>
-        
         <h3 id="director" class="cardDirector">Director: ${films[i].director}</h3>
         <h3 id="year" class="cardYear">(${films[i].release_date})</h3>
-      </section>
+    </section>
     </section>`
-  }
-  document.getElementById('filmCard').innerHTML = list
+    }
+    document.getElementById('filmCard').innerHTML = list
 }
 movieList(printFilm)
 console.log(orderData, data)

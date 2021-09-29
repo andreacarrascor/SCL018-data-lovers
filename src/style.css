@@ -133,8 +133,7 @@ p {
 }
 /* NUEVO
 Hover card al pasar el mouse por encima */
-.filmsContainer:hover,
-.filmsContainer:focus {
+.filmsContainer:hover,.filmsContainer:focus {
     box-shadow: 6px 6px 9px #000000;
     /* box-shadow: 6px 6px 9px #155f46; también podría ser de otro color el shadow al pasar por encima*/ 
     transform: translateY(-0.40em);
