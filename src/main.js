@@ -15,8 +15,9 @@ const movieList = function (films) {
       </figure>
       <section class="cardContainer-inner">
         <h2 id="title" class="cardTitle">${films[i].title}</h2>
-        <h3 id="director" class="cardDirector">${films[i].director}</h3>
-        <h3 id="rate_score" class="cardRate">${films[i].rt_score}/100</h3>
+        
+        <h3 id="director" class="cardDirector">Director: ${films[i].director}</h3>
+        <h3 id="year" class="cardYear">(${films[i].release_date})</h3>
       </section>
     </section>`
   }
@@ -24,3 +25,6 @@ const movieList = function (films) {
 }
 movieList(printFilm)
 console.log(orderData, data)
+
+// Rate score
+// <h3 id="rate_score" class="cardRate">Rate score: ${films[i].rt_score}/100</h3>
