@@ -14,9 +14,9 @@ const movieList = function (films) {
         <img alt="Poster" id="poster" class="poster" src="${films[i].poster}">
       </figure>
       <section class="cardContainer-inner">
-        <h2 id="title" class="title">${films[i].title}</h2>
-        <h3 id="director" class="director">${films[i].director}</h3>
-        <h3 id="rate_score" class="rate_score">${films[i].rt_score}/100</h3>
+        <h2 id="title" class="cardTitle">${films[i].title}</h2>
+        <h3 id="director" class="cardDirector">${films[i].director}</h3>
+        <h3 id="rate_score" class="cardRate">${films[i].rt_score}/100</h3>
       </section>
     </section>`
   }
