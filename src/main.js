@@ -1,16 +1,18 @@
 import data from './data/ghibli/ghibli.js'
 import orderData from './data.js'
-
+//variable para llamar al arreglo que contiene las películas 
 let printFilm = data.films
 
 const movieList = function (films) {
-    let list = ''
-    document.getElementById('filmCard').innerHTML = ''
+    let list = '';
+    //reemplazamos el contenido de filmCard con una cadena vacía
+    document.getElementById('filmCard').innerHTML = '';
 
     for (let i = 0; i < films.length; i++) {
+        //template strings
         list += `
     <section class="filmsContainer">
-    <figure class="cardImage">
+    <figure class="cardImage">                           
         <img alt="Poster" id="poster" class="poster" src="${films[i].poster}">
     </figure>
     <section class="cardContainer-inner">
@@ -20,10 +22,39 @@ const movieList = function (films) {
     </section>
     </section>`
     }
-    document.getElementById('filmCard').innerHTML = list
+    //el contenido de filmCard ahora contiene los valores de la variable list
+    document.getElementById('filmCard').innerHTML = list;
 }
 movieList(printFilm)
-console.log(orderData, data)
 
-// Rate score
-// <h3 id="rate_score" class="cardRate">Rate score: ${films[i].rt_score}/100</h3>
+const filmCard = document.getElementById("filmCard");
+const openModal = document.getElementById("openModal");
+const close = document.getElementsByClassName("close")[0];
+
+filmCard.addEventListener("click", () => {
+    openModal.style.display = "block";
+})
+close.addEventListener("click", () => {
+    openModal.style.display = "none";
+})
+
+// const filmModal = function (dataFilm) {
+//     let showContent = '';
+
+//     for (let i = 0; i < dataFilm.length; i++) {
+//         showContent += `
+//     <section class="modalContent">
+//     <h2 id="title" class="cardTitle">${dataFilm[i].title}</h2>
+//     <h3 id="director" class="cardDirector">Director: ${dataFilm[i].director}</h3>
+//     <h3 id="year" class="cardYear">(${dataFilm[i].release_date})</h3>
+//     </section> `
+//     }
+//     document.getElementById('innerModal').innerHTML = showContent;
+
+// }
+
+//filmModal(printFilm)
+/*console.log(orderData, data)*/
+
+
+
