@@ -1,0 +1,231 @@
+html {
+    height: 100%;
+}
+
+@font-face {
+    font-family: Header_Font;
+    src: url("Font/yugothil.ttf");
+}
+
+body {
+    position: relative;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body::before {
+    content: "";
+    background-image: url(img/background.png);
+    /* background-size:cover; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+
+header {
+    position: relative;
+    background-color: #616C69;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: 114px;
+}
+
+h1 {
+    font-family: Header_Font;
+    font-size: 50px;
+    color: white;
+}
+
+.logo {
+    height: 100%;
+}
+
+footer {
+    position: relative;
+    background-color: #2E3E38;
+    font-family: Header_Font;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+audio {
+    justify-content: right;
+}
+
+p {
+    position: relative;
+    font-family: Header_Font;
+    font-size: 20px;
+}
+
+.container {
+    position: relative;
+}
+
+.filterMenu {
+    display: flex;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color:#44A082;
+    opacity: 70%;
+    height: 10%;
+    margin-top: 0%;
+    padding: 12px;
+}
+
+.comboBox, input {
+    height: 50px;
+    width: 300px;
+    background-color: #44A082;
+    border: none;
+    box-shadow: 0px 3px 6px #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 23px;
+    font-family: Header_Font;
+    outline: none;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+::placeholder {
+    color: white;
+}
+
+/* CSS CARD */
+
+.containerFilms {
+    margin:0%;
+}  
+
+.filmCard {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filmsContainer {
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0, .7);
+    margin: 1%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    width: 17%;
+    box-shadow: 6px 6px 9px #000000;
+}
+/* NUEVO
+Hover card al pasar el mouse por encima */
+.filmsContainer:hover,.filmsContainer:focus {
+    /*box-shadow: 6px 6px 9px #000000;*/
+    box-shadow: 6px 6px 9px #155f46;
+    transform: translateY(-0.40em);
+}
+
+.cardContainer-inner {
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0, .3);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    width: 75%;
+    height: 75%;
+}
+
+.poster {
+    height: 193px;
+    width: 150px;
+    margin-bottom: 0;
+}
+
+.cardTitle,.cardDirector,.cardYear {
+    font-family: Header_Font;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.cardTitle {
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.cardDirector,.cardYear {
+    margin-top: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.671);
+}
+
+.cardImage {
+    margin-bottom: 10px;
+}
+
+/*MODAL*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.innerModal {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+/* RECURSO PARA HACER LA PÁGINA RESPONSIVA */
+/* @media (min-width: 950px){
+    .container {
+    }
+} */
