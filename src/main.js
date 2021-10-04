@@ -56,11 +56,14 @@ const close = document.getElementsByClassName("close")[0];
 
 filmCard.addEventListener("click", () => {
     openModal.style.display = "block";
+    
 })
 close.addEventListener("click", () => {
     openModal.style.display = "none";
 })
 
-// console.log(data)
+
+
+
 
 

@@ -199,24 +199,26 @@ Hover card al pasar el mouse por encima */
 
 /* Modal Content */
 .innerModal {
-    background-color: #fefefe;
+    background-color: rgb(0, 0, 0);
+    color: white;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    border: none;
+    width: 60%;
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: black;
+    background-color: tomato;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 .close:hover,.close:focus {
     color: #000;
-    text-decoration: none;
+    text-decoration:black;
     cursor: pointer;
 }
 
