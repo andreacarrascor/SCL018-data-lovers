@@ -226,7 +226,7 @@ Hover card al pasar el mouse por encima */
 
 .close:hover,.close:focus {
     color: #000;
-    text-decoration: none;
+    text-decoration:black;
     cursor: pointer;
 }
 

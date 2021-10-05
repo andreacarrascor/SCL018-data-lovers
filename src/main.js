@@ -59,8 +59,10 @@ document.querySelectorAll(".filmsContainer").forEach(element => {
     })
 });
 
+
 //Botón cerrar modal
 const close = document.getElementsByClassName("close")[0];
+
 close.addEventListener("click", () => {
     document.querySelector(".modal").style.display = 'none';
 })
@@ -75,5 +77,10 @@ close.addEventListener("click", () => {
 // });
 
 // console.log(data)
+
+
+
+
+
 
 
