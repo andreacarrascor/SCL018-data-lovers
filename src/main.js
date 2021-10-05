@@ -20,12 +20,27 @@ const drawCard = (films) => {
     <section class="modal">
     <section class="innerModal" id="innerModal">
         <span class="close">&times;</span>
-        <img alt="Poster" id="poster" class="poster" src="${films.poster}">
-        <p>Title: ${films.title}</p>
-        <p>Director: ${films.director}</p>
-        <p>Description: ${films.description}</p>
-        <p>Producer: ${films.producer}</p>
-        <p>Release date: ${films.release_date}</p>
+        <figure class="modalImage">
+        <img alt="Poster" id="poster" class="modalPoster" src="${films.poster}">
+        </figure>
+        <section class="modalContainer-inner">
+            <article class="title__Container">
+                <h4 class="subtitles">Title: </h4>
+                <h4 class="modalInnerText">${'\u00A0' + films.title}</h4>
+            </article>
+            <article class="director__Container">
+                <h4 class="subtitles">Director: </h4>
+                <h4 class="modalInnerText"> ${'\u00A0' + films.director}</h4>
+            </article>
+            <article class="releaseDate__Container">
+                <h4 class="subtitles">Release Date: </h4>
+                <h4 class="modalInnerText"> ${'\u00A0' + films.release_date}</h4>
+            </article>
+            <article class="description__Container">
+                <h4 class="subtitles">Description: </h4>
+                <h4 class="modalInnerText"> ${films.description}</h4>
+            </article>
+        </section>
     </section>
     </section>`
         ;
@@ -37,8 +52,8 @@ for (let i = 0; i < films.length; i++) {
 
 // Query modal
 document.querySelectorAll(".filmsContainer").forEach(element => {
-    element.addEventListener("click", (event) => {
-        event.target.style.display = "block";
+    element.addEventListener("click", () => {
+        // event.target.style.display = "block";
         // console.log(event.target);
         document.querySelector(".modal").style.display = 'block';
     })
