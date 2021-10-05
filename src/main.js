@@ -77,3 +77,8 @@ document.querySelectorAll(".filmsContainer").forEach((element, index) => {
 
 
 
+
+
+
+
+
