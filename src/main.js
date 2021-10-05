@@ -2,7 +2,7 @@ import data from './data/ghibli/ghibli.js'
 // import orderData from './data.js'
 
 let films = data.films;
-let printCard= document.getElementById("filmCard");
+let printCard = document.getElementById("filmCard");
 
 const drawCard = (films) => {
     return `
@@ -28,10 +28,10 @@ const drawCard = (films) => {
         <p>Release date: ${films.release_date}</p>
     </section>
     </section>`
-    ;
+        ;
 };
 
-for (let i=0; i < films.length; i++) {
+for (let i = 0; i < films.length; i++) {
     printCard.innerHTML += drawCard(films[i]);
 }
 
@@ -40,7 +40,7 @@ document.querySelectorAll(".filmsContainer").forEach(element => {
     element.addEventListener("click", (event) => {
         event.target.style.display = "block";
         // console.log(event.target);
-        document.querySelector(".modal").style.display= 'block';
+        document.querySelector(".modal").style.display = 'block';
     })
 });
 
@@ -48,13 +48,8 @@ document.querySelectorAll(".filmsContainer").forEach(element => {
 //Botón cerrar modal
 const close = document.getElementsByClassName("close")[0];
 
-filmCard.addEventListener("click", () => {
-    openModal.style.display = "block";
-    
-})
-
 close.addEventListener("click", () => {
-    document.querySelector(".modal").style.display= 'none';
+    document.querySelector(".modal").style.display = 'none';
 })
 
 //FUNCION ELI
