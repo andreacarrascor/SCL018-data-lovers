@@ -2,18 +2,18 @@ import data from './data/ghibli/ghibli.js'
 // import orderData from './data.js'
 
 let films = data.films;
-let printCard = document.getElementById("filmCard");
+let printCard = document.getElementById("film-card");
 
 const drawCard = (films) => {
     return `
-    <section class="filmsContainer">
-    <figure class="cardImage">                           
+    <section class="films-container">
+    <figure class="card-image">                           
         <img alt="Poster" id="poster" class="poster" src="${films.poster}">
     </figure>
-    <section class="cardContainer-inner">
-        <h2 id="title" class="cardTitle">${films.title}</h2>
-        <h3 id="director" class="cardDirector">Director: ${films.director}</h3>
-        <h3 id="year" class="cardYear">(${films.release_date})</h3>
+    <section class="card-container-inner">
+        <h2 id="title" class="card-title">${films.title}</h2>
+        <h3 id="director" class="card-director">Director: ${films.director}</h3>
+        <h3 id="year" class="card-year">(${films.release_date})</h3>
     </section>
     </section>`
 };
@@ -22,32 +22,35 @@ for (let i = 0; i < films.length; i++) {
     printCard.innerHTML += drawCard(films[i]);
 }
 
-let printModal = document.querySelector(".modalContainer");
+const printModal = document.querySelector(".modal-container");
 
 const drawModal = (films) => {
     return `
     <section class="modal">
-    <section class="innerModal" id="innerModal">
+    <section class="inner-modal" id="inner-modal">
         <span class="close">&times;</span>
-        <figure class="modalImage">
-        <img alt="Poster" id="poster" class="modalPoster" src="${films.poster}">
+        <figure class="modal-image">
+        <img alt="Poster" id="poster" class="modal-poster" src="${films.poster}">
         </figure>
-        <section class="modalContainer-inner">
-            <article class="title__Container">
-                <h4 class="subtitles">Title: </h4>
-                <h4 class="modalInnerText">${'\u00A0' + films.title}</h4>
+        <section class="modal-container-inner">
+            <article class="title-container">
+                <h4 class="modal-inner-text" id="modal-title">${films.title}</h4>
             </article>
-            <article class="director__Container">
+            <article class="director-container">
                 <h4 class="subtitles">Director: </h4>
-                <h4 class="modalInnerText"> ${'\u00A0' + films.director}</h4>
+                <h4 class="modal-inner-text"> ${'\u00A0' + films.director}</h4>
             </article>
-            <article class="releaseDate__Container">
+            <article class="release-date-container">
                 <h4 class="subtitles">Release Date: </h4>
-                <h4 class="modalInnerText"> ${'\u00A0' + films.release_date}</h4>
+                <h4 class="modal-inner-text"> ${'\u00A0' + films.release_date}</h4>
             </article>
-            <article class="description__Container">
+            <article class="rate-score">
+                <h4 class="subtitles">Rate-score: </h4>
+                <h4 class="modal-inner-text"> ${'\u00A0' + films.rt_score}/100</h4>
+            </article>
+            <article class="description-container">
                 <h4 class="subtitles">Description: </h4>
-                <h4 class="modalInnerText"> ${films.description}</h4>
+                <h4 class="modal-inner-text"> ${films.description}</h4>
             </article>
         </section>
     </section>
@@ -55,22 +58,21 @@ const drawModal = (films) => {
 };
 
 // Query modal
-document.querySelectorAll(".filmsContainer").forEach((element, index) => {
+document.querySelectorAll(".films-container").forEach((element, index) => {
     element.addEventListener("click", () => {
-        // event.target.style.display = "block";
-        // console.log(event.target);
-        const modalHTML = drawModal(films[index]);
-        const div = document.createElement('div');
-        div.innerHTML = modalHTML;
 
-        console.log(modalHTML)
+        const modalHTML = drawModal(films[index]);
+        const modalContent = document.createElement('div');
+        modalContent.innerHTML = modalHTML;
+
         printModal.innerHTML = "";
-        printModal.appendChild(div);
-        
+        printModal.appendChild(modalContent);
+
         document.querySelector(".modal").style.display = 'block';
+        //Cierra el modal (X)
         const close = document.getElementsByClassName("close")[0];
         close.addEventListener("click", () => {
-        document.querySelector(".modal").style.display = 'none';
+            document.querySelector(".modal").style.display = 'none';
         })
     })
 });
