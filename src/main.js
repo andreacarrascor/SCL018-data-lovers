@@ -15,8 +15,17 @@ const drawCard = (films) => {
         <h3 id="director" class="cardDirector">Director: ${films.director}</h3>
         <h3 id="year" class="cardYear">(${films.release_date})</h3>
     </section>
-    </section>
-    
+    </section>`
+};
+
+for (let i = 0; i < films.length; i++) {
+    printCard.innerHTML += drawCard(films[i]);
+}
+
+let printModal = document.querySelector(".modalContainer");
+
+const drawModal = (films) => {
+    return `
     <section class="modal">
     <section class="innerModal" id="innerModal">
         <span class="close">&times;</span>
@@ -43,40 +52,29 @@ const drawCard = (films) => {
         </section>
     </section>
     </section>`
-        ;
 };
 
-for (let i = 0; i < films.length; i++) {
-    printCard.innerHTML += drawCard(films[i]);
-}
-
 // Query modal
-document.querySelectorAll(".filmsContainer").forEach(element => {
+document.querySelectorAll(".filmsContainer").forEach((element, index) => {
     element.addEventListener("click", () => {
         // event.target.style.display = "block";
         // console.log(event.target);
+        const modalHTML = drawModal(films[index]);
+        const div = document.createElement('div');
+        div.innerHTML = modalHTML;
+
+        console.log(modalHTML)
+        printModal.innerHTML = "";
+        printModal.appendChild(div);
+        
         document.querySelector(".modal").style.display = 'block';
+        const close = document.getElementsByClassName("close")[0];
+        close.addEventListener("click", () => {
+        document.querySelector(".modal").style.display = 'none';
+        })
     })
 });
 
-
-//Botón cerrar modal
-const close = document.getElementsByClassName("close")[0];
-
-close.addEventListener("click", () => {
-    document.querySelector(".modal").style.display = 'none';
-})
-
-//FUNCION ELI
-// document.querySelectorAll(".filmsContainer").forEach(element => {
-//     element.addEventListener("click", (event) => {
-//         // event.target.querySelector(event.target.dataset.id).style.display = "block";
-//         // event.target.dataset.id.style.display = "block";
-//         event.target.style.display = "block";
-//     })
-// });
-
-// console.log(data)
 
 
 
