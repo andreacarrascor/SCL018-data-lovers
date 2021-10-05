@@ -1,9 +1,4 @@
-// estas funciones son de ejemplo
+// const orderData = {
 
-export const example = () => {
-  return 'example';
-};
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+// export default orderData;

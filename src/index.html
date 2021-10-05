@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>GHIBLI'S COLLECTION</h1>
+    <figure>
+      <img class="logo" src="img/logo.png" alt="Studio Ghibli" />
+    </figure>
+  </header>
+  <nav>
+    <section class="container" id="landing page">
+      <section class="filterMenu">
+        <section class="search">
+          <input class="searchMovie" id="searchID" type="text" placeholder="Search" maxlength="30">
+        </section>
+        <section class="director">
+          <select id="filterByDirector" class="comboBox">
+            <option value="director" selected hidden>Filter by Director</option>
+            <option value="all">All</option>
+            <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+            <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+            <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+            <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+            <option value="Isao Takahata">Isao Takahata</option>
+            <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+          </select>
+        </section>
+        <section class="sortBy">
+          <select id="sort" class="comboBox">
+            <option value="sortBy" selected hidden>Order by</option>
+            <option value="title" id="ascMovie">Title (A-Z)</option>
+            <option value="title" id="descMovie">Title (Z-A)</option>
+            <option value="release_date" id="newestMovie">Newest movies</option>
+            <option value="release_date" id="oldestMovie">Oldest movies</option>
+          </select>
+        </section>
+      </section>
+    </section>
+    </section>
+  </nav>
+  <main>
+
+
+    <!-- Descomentar esta Card para testear  -->
+
+    <section class="containerFilms">
+      <section class="filmCard" id="filmCard"></section>
+    </section>
+    
+    <!-- <section class="containerModal">
+      <section class="modal" id="openModal"></section>
+    </section> -->
+    <!-- <section class="modal" id="openModal">
+      <section class="innerModal" id="innerModal">
+        <span class="close">&times;</span>
+        <img src="img/meme.jpg" alt="poster" height="500" width="250">
+      </section>
+    </section> -->
+
+    <!-- Descomentar esta Card para testear -->
+
+  </main>
+  <footer>
+    <h4>© All rights reserved 2021 - Developers: Andrea Carrasco - Claudia Gómez</h4>
+    <audio controls autoplay loop>
+      <source src="audio/Moving_Castle.mp3">
+    </audio>
+  </footer>
+</body>
+<script src="main.js" type="module"></script>
+
 </html>

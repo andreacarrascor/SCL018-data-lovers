@@ -1,0 +1,281 @@
+html {
+    height: 100%;
+}
+
+@font-face {
+    font-family: Header_Font;
+    src: url("Font/yugothil.ttf");
+}
+
+body {
+    position: relative;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body::before {
+    content: "";
+    background-image: url(img/background.png);
+    /* background-size:cover; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+
+header {
+    position: relative;
+    background-color: #616C69;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: 114px;
+}
+
+h1 {
+    font-family: Header_Font;
+    font-size: 50px;
+    color: white;
+}
+
+.logo {
+    height: 100%;
+}
+
+footer {
+    position: relative;
+    background-color: #2E3E38;
+    font-family: Header_Font;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+audio {
+    justify-content: right;
+}
+
+p {
+    position: relative;
+    font-family: Header_Font;
+    font-size: 20px;
+}
+
+.container {
+    position: relative;
+}
+
+.filterMenu {
+    display: flex;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color:#44A082;
+    opacity: 70%;
+    height: 10%;
+    margin-top: 0%;
+    padding: 12px;
+}
+
+.comboBox, input {
+    height: 50px;
+    width: 300px;
+    background-color: #44A082;
+    border: none;
+    box-shadow: 0px 3px 6px #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 23px;
+    font-family: Header_Font;
+    outline: none;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+::placeholder {
+    color: white;
+}
+
+/* CSS CARD */
+
+.containerFilms {
+    margin:0%;
+}  
+
+.filmCard {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filmsContainer {
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0, .7);
+    margin: 1%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    width: 17%;
+    box-shadow: 6px 6px 9px #000000;
+}
+/* NUEVO
+Hover card al pasar el mouse por encima */
+.filmsContainer:hover,.filmsContainer:focus {
+    /*box-shadow: 6px 6px 9px #000000;*/
+    box-shadow: 6px 6px 9px #155f46;
+    transform: translateY(-0.40em);
+}
+
+.cardContainer-inner {
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0, .3);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    width: 75%;
+    height: 75%;
+}
+
+.poster {
+    height: 193px;
+    width: 150px;
+    margin-bottom: 0;
+}
+
+.cardTitle,.cardDirector,.cardYear {
+    font-family: Header_Font;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.cardTitle {
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.cardDirector,.cardYear {
+    margin-top: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.671);
+}
+
+.cardImage {
+    margin-bottom: 10px;
+}
+
+/*MODAL*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+}
+
+/* Modal Content */
+.innerModal {
+    background-color: rgba(0,0,0,0.85);
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    position: relative;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.modalImage {
+    display: flex;
+    float: left;
+}
+/* The Close Button */
+.close {
+    background-color: rgb(10, 228, 206);
+    height: 30px;
+    width: 30px;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.close:hover,.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.subtitles {
+    color: turquoise;
+    font-size: 15px;
+    font-family: Header_Font;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.modalInnerText {
+    font-size: 15px;
+    color: white;
+    font-family: Header_Font;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.modalContainer-inner {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #303433; */
+    background-color: #000000;
+    padding: 10px;
+    margin-top: 1%;
+}
+
+.title__Container, .director__Container, .releaseDate__Container {
+    display: flex;
+    flex-direction: row;
+}
+
+.description__Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalPoster{
+    height: 283px;
+    width: 220px;
+    margin-bottom: 0;
+}
+/* RECURSO PARA HACER LA PÁGINA RESPONSIVA */
+/* @media (min-width: 950px){
+    .container {
+    }
+} */
+/* 
+h4{
+    margin-right: 10px;
+} */
