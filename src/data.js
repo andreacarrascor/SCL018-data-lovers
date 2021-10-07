@@ -1,4 +1,15 @@
-// const orderData = {
+
+export const filterData = (data, selectedDirector) => {
+
+    const movies = data.films;
+    const resultFilter = movies.filter(movie => movie.director === selectedDirector);
+    return resultFilter;
+
+}
 
 
-// export default orderData;
+// ordenar de la A a la Z y viceversa
+// export const sortData = (data, sortBy, sortOrder) => {
+
+// },
+
