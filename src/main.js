@@ -19,11 +19,9 @@ const drawCard = (films) => {
     
 }; 
 
-    for (let i = 0; i < films.length; i++) {
-        printCard.innerHTML += drawCard(films[i]);
-    }
-
-    
+for (let i = 0; i < films.length; i++) {
+    printCard.innerHTML += drawCard(films[i]);
+}
 
 
 const printModal = document.querySelector(".modal-container");
@@ -72,7 +70,6 @@ document.querySelectorAll(".films-container").forEach((element, index) => {
 
         printModal.innerHTML = "";
         printModal.appendChild(modalContent);
-
         document.querySelector(".modal").style.display = 'block';
         //Cierra el modal (X)
         const close = document.getElementsByClassName("close")[0];
@@ -88,9 +85,22 @@ let directorOption = document.querySelector(".combo-box");
 directorOption.addEventListener("change", (event) => {
     console.log(event.target.value);
     const chosenDirector = filterData(data, event.target.value);
-    console.log(chosenDirector);
-    //print(chosenDirector);
+    document.querySelector(".film-card").style.display = 'none';
+
+    const print = (films)=> {
+        for (let i = 0; i < films.length; i++) {
+            document.querySelector(".film-card").classList.add("poto");
+        printCard.innerHTML += drawCard(films[i]);
+        }
+    } 
+    
+
+
+    print(chosenDirector);
+    console.log(chosenDirector)
 })
+
+
 
 
 
