@@ -255,9 +255,10 @@ Hover card al pasar el mouse por encima */
     font-family: Header_Font;
     font-size: 20px;
 }
-.poto {
-    display: block;
-}
+/* .test {
+
+    display: flex;
+} */
 
 footer {
     position: relative;
