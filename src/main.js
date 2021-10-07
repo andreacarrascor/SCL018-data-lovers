@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js'
-// import orderData from './data.js'
+import{filterData} from './data.js'
 
 let films = data.films;
 let printCard = document.getElementById("film-card");
@@ -16,15 +16,18 @@ const drawCard = (films) => {
         <h3 id="year" class="card-year">(${films.release_date})</h3>
     </section>
     </section>`
-};
+    
+}; 
 
 for (let i = 0; i < films.length; i++) {
     printCard.innerHTML += drawCard(films[i]);
 }
 
+
 const printModal = document.querySelector(".modal-container");
 
 const drawModal = (films) => {
+
     return `
     <section class="modal">
     <section class="inner-modal" id="inner-modal">
@@ -67,7 +70,6 @@ document.querySelectorAll(".films-container").forEach((element, index) => {
 
         printModal.innerHTML = "";
         printModal.appendChild(modalContent);
-
         document.querySelector(".modal").style.display = 'block';
         //Cierra el modal (X)
         const close = document.getElementsByClassName("close")[0];
@@ -76,6 +78,28 @@ document.querySelectorAll(".films-container").forEach((element, index) => {
         })
     })
 });
+
+//escuchador de opciones director//traer values de las option
+let directorOption = document.querySelector(".combo-box");
+
+directorOption.addEventListener("change", (event) => {
+    console.log(event.target.value);
+    const chosenDirector = filterData(data, event.target.value);
+    document.querySelector(".film-card").style.display = 'none';
+
+    const print = (films)=> {
+        for (let i = 0; i < films.length; i++) {
+            document.querySelector(".film-card").classList.add("poto");
+        printCard.innerHTML += drawCard(films[i]);
+        }
+    } 
+    
+
+
+    print(chosenDirector);
+    console.log(chosenDirector)
+})
+
 
 
 

@@ -18,7 +18,7 @@ body {
 body::before {
     content: "";
     background-image: url(img/background.png);
-    /* background-size:cover; */
+
     position: absolute;
     top: 0px;
     right: 0px;
@@ -255,6 +255,9 @@ Hover card al pasar el mouse por encima */
     font-family: Header_Font;
     font-size: 20px;
 }
+.poto {
+    display: block;
+}
 
 footer {
     position: relative;
@@ -276,3 +279,4 @@ audio {
     .container {
     }
 } */
+/* test */
