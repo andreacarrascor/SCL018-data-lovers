@@ -83,22 +83,19 @@ document.querySelectorAll(".films-container").forEach((element, index) => {
 let directorOption = document.querySelector(".combo-box");
 
 directorOption.addEventListener("change", (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     const chosenDirector = filterData(data, event.target.value);
-    document.querySelector(".film-card").style.display = 'none';
-
+    // document.querySelector(".film-card").style.display = 'block';
     const print = (films)=> {
+        printCard.innerHTML = "";
         for (let i = 0; i < films.length; i++) {
-            document.querySelector(".film-card").classList.add("poto");
-        printCard.innerHTML += drawCard(films[i]);
+            // document.querySelector(".film-card").classList.add("test");
+            printCard.innerHTML += drawCard(films[i]);
         }
     } 
-    
-
-
     print(chosenDirector);
     console.log(chosenDirector)
-})
+});
 
 
 
