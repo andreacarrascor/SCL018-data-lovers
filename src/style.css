@@ -63,6 +63,12 @@ h1 {
     height: 10%;
     margin-top: 0%;
     padding: 12px;
+    align-items: center;
+}
+
+.home-button {
+    height: 80px;
+    
 }
 
 .combo-box, .combo-box-filters, input {
@@ -271,9 +277,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}
-audio {
-    justify-content: right;
 }
 
 
