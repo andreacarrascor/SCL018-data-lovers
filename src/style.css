@@ -40,6 +40,7 @@ h1 {
     font-family: Header_Font;
     font-size: 50px;
     color: white;
+    display: flex;
 }
 
 .logo {
@@ -64,7 +65,7 @@ h1 {
     padding: 12px;
 }
 
-.combo-box, input {
+.combo-box, .combo-box-filters, input {
     height: 50px;
     width: 300px;
     background-color: #44A082;
@@ -108,8 +109,9 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     color: white;
-    width: 17%;
+    /* width: 17%; */
     box-shadow: 6px 6px 9px #000000;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr))
 }
 /* NUEVO
 Hover card al pasar el mouse por encima */
@@ -280,4 +282,4 @@ audio {
     .container {
     }
 } */
-/* test */
+

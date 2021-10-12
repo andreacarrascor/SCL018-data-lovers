@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js'
-import{filterData} from './data.js'
+import {filterData} from './data.js'
 
 let films = data.films;
 let printCard = document.getElementById("film-card");
@@ -61,6 +61,7 @@ const drawModal = (films) => {
 };
 
 // Query modal
+
 document.querySelectorAll(".films-container").forEach((element, index) => {
     element.addEventListener("click", () => {
 
@@ -79,6 +80,7 @@ document.querySelectorAll(".films-container").forEach((element, index) => {
     })
 });
 
+
 //escuchador de opciones director//traer values de las option
 let directorOption = document.querySelector(".combo-box");
 
@@ -91,17 +93,51 @@ directorOption.addEventListener("change", (event) => {
         for (let i = 0; i < films.length; i++) {
             // document.querySelector(".film-card").classList.add("test");
             printCard.innerHTML += drawCard(films[i]);
+            
+            document.querySelectorAll(".films-container").forEach((element, index) => {
+                element.addEventListener("click", () => {
+            
+                    const modalHTML = drawModal(films[index]);
+                    const modalContent = document.createElement('div');
+                    modalContent.innerHTML = modalHTML;
+            
+                    printModal.innerHTML = "";
+                    printModal.appendChild(modalContent);
+                    document.querySelector(".modal").style.display = 'block';
+                    //Cierra el modal (X)
+                    const close = document.getElementsByClassName("close")[0];
+                    close.addEventListener("click", () => {
+                        document.querySelector(".modal").style.display = 'none';
+                    })
+                })
+            });
+            
         }
     } 
     print(chosenDirector);
-    console.log(chosenDirector)
+    // console.log(chosenDirector)
 });
 
 
+//Función search, bug de modal
+const search = document.getElementById("search-id");
 
-
-
-
+search.addEventListener("keydown", (key) => {
+    if(key.key === "Enter"){
+        const text = search.value.toLowerCase();
+        const titleFilter = films.filter(x=> (x.title.toLowerCase()).includes(text));
+        
+        if(titleFilter.length > 0) {
+            printCard.innerHTML = "";
+            for (let i = 0; i < titleFilter.length; i++) {
+                printCard.innerHTML += drawCard(titleFilter[i]);
+            }
+        }
+        else {
+            alert("Película no encontrada");
+        }
+    }
+});
 
 
 
