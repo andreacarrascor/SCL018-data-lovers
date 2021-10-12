@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js'
-import {filterData} from './data.js'
+import { filterData } from './data.js'
 
 let films = data.films;
 let printCard = document.getElementById("film-card");
@@ -16,8 +16,8 @@ const drawCard = (films) => {
         <h3 id="year" class="card-year">(${films.release_date})</h3>
     </section>
     </section>`
-    
-}; 
+
+};
 
 for (let i = 0; i < films.length; i++) {
     printCard.innerHTML += drawCard(films[i]);
@@ -61,7 +61,6 @@ const drawModal = (films) => {
 };
 
 // Query modal
-
 document.querySelectorAll(".films-container").forEach((element, index) => {
     element.addEventListener("click", () => {
 
@@ -88,19 +87,19 @@ directorOption.addEventListener("change", (event) => {
     // console.log(event.target.value);
     const chosenDirector = filterData(data, event.target.value);
     // document.querySelector(".film-card").style.display = 'block';
-    const print = (films)=> {
+    const print = (films) => {
         printCard.innerHTML = "";
         for (let i = 0; i < films.length; i++) {
             // document.querySelector(".film-card").classList.add("test");
             printCard.innerHTML += drawCard(films[i]);
-            
+
             document.querySelectorAll(".films-container").forEach((element, index) => {
                 element.addEventListener("click", () => {
-            
+
                     const modalHTML = drawModal(films[index]);
                     const modalContent = document.createElement('div');
                     modalContent.innerHTML = modalHTML;
-            
+
                     printModal.innerHTML = "";
                     printModal.appendChild(modalContent);
                     document.querySelector(".modal").style.display = 'block';
@@ -111,31 +110,45 @@ directorOption.addEventListener("change", (event) => {
                     })
                 })
             });
-            
+
         }
-    } 
+    }
     print(chosenDirector);
     // console.log(chosenDirector)
 });
 
+const home = document.querySelector(".home-button");
+
+home.addEventListener("click", function () {
+    location.reload();
+
+})
 
 //Función search, bug de modal
 const search = document.getElementById("search-id");
 
 search.addEventListener("keydown", (key) => {
-    if(key.key === "Enter"){
+    if (key.key === "Enter") {
         const text = search.value.toLowerCase();
-        const titleFilter = films.filter(x=> (x.title.toLowerCase()).includes(text));
-        
-        if(titleFilter.length > 0) {
+        const titleFilter = films.filter(x => (x.title.toLowerCase()).includes(text));
+        const directorFilter = films.filter(x => (x.director.toLowerCase()).includes(text));
+
+        if (titleFilter.length > 0) {
             printCard.innerHTML = "";
             for (let i = 0; i < titleFilter.length; i++) {
                 printCard.innerHTML += drawCard(titleFilter[i]);
             }
         }
+        else if (directorFilter.length > 0) {
+            printCard.innerHTML = "";
+            for (let i = 0; i < directorFilter.length; i++) {
+                printCard.innerHTML += drawCard(directorFilter[i]);
+            }
+        }
         else {
             alert("Película no encontrada");
         }
+
     }
 });
 
