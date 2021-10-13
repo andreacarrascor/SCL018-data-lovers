@@ -5,11 +5,18 @@ export const filterData = (data, selectedDirector) => {
 }
 
 // ordenar de la A a la Z y viceversa
-// export const sortData = (data, sortBy, sortOrder) => {
+export const sortData = (data, sortBy, sortOrder) => {
 
-// },
-
-// export const sortOrder = (data, orderAtoZ) => {
-//     const movies = data.films;
-//     const AtoZ = 
-// }
+    const dataGhibli = data.films;
+    
+    const resultSort = dataGhibli.sort(function (a, b) {
+        if (a[sortBy] > b[sortBy]) {
+            return 1;
+        }
+        if (a[sortBy] < b[sortBy]) {
+            return -1;
+        }
+        return 0;
+    })
+    return resultSort;
+}

@@ -1,5 +1,10 @@
 import data from './data/ghibli/ghibli.js'
-import { filterData } from './data.js'
+import { filterData, sortData } from './data.js'
+
+//ejemplo taller 
+const sortBy = "director";
+const sortOrder = "za";
+console.log (sortData(data, sortBy, sortOrder));
 
 let films = data.films;
 let printCard = document.getElementById("film-card");
@@ -117,6 +122,7 @@ directorOption.addEventListener("change", (event) => {
     // console.log(chosenDirector)
 });
 
+//escuchador para refrescar a la pantalla inicial
 const home = document.querySelector(".home-button");
 
 home.addEventListener("click", function () {
