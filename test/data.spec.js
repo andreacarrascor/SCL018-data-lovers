@@ -1,114 +1,66 @@
-// import { example, anotherExample } from '../src/data.js';
+import { searchData, filterData, sortData } from '../src/data.js';
 
-import {searchData, filterData, sortData} from '../src/data.js';
-
-describe('Prueba input search', () => {
+describe('searchData', () => {
   it('is a function', () => {
     expect(typeof searchData).toBe('function');
   });
 
-  it('Debería retornar el resultado del título al buscar "Castle"', () => {
-    const data = [
-      {
-        "title": "Kiki's Delivery Service",
-      },
-      {
-        "title": "Castle in the Sky",
-      },
-      {
-        "title": "Only Yesterday",
-      }
-    ];
-    const result = [
-      {
-        "title": "Castle in the Sky",
-      }
-    ];
-    expect(searchData(data, 'title', 'castle')).toEqual(result);
+  it('should return "Castle in the Sky" when searching "Castle in the Sky"', () => {
+    const data = [{ "title": "Castle in the Sky" }];
+    const result = [{ "title": "Castle in the Sky" }];
+    expect(searchData(data, 'title', "Castle in the Sky")).toEqual(result);
   });
+}),
 
-
-describe('Prueba filtro por director', () => {
+describe('filterData', () => {
   it('is a function', () => {
     expect(typeof filterData).toBe('function');
   });
 
-  it('should return the result to director and producer Hayao Miyazaki.', () => {
-    const data = [
-      {
-          "director": "Hayao Miyazaki",
-
-        },
-        {
-          "director": "Hayao Miyazaki",
-
-        },
-        {
-          "director": "Isao Takahata",
-
-        }
-      ];
-      const result = [
-        {
-          "director": "Hayao Miyazaki",
-
-        },
-        {
-          "director": "Hayao Miyazaki",
-
-        }
-      ];
-      expect(filterData(data,'Hayao Miyazaki')).toEqual(result);
-    });
+  it('should return the result to director "Hayao Miyazaki"', () => {
+    const data = [{ "director": "Hayao Miyazaki" }];
+    const result = [{ "director": "Hayao Miyazaki" }];
+    expect(filterData(data, "Hayao Miyazaki")).toEqual(result);
   });
+});
 
-
-describe('Prueba ordenar alfabeticamente', () => {
+describe('sortData', () => {
   it('is a function', () => {
     expect(typeof sortData).toBe('function');
   });
-  
+  it('should order the result from A to Z', () => {
+    const data = [
+      {"title": "Whisper of the Heart"},
+      {"title": "Castle in the sky"},
+      {"title": "Grave of the Fireflies"},
+      {"title": "My Neighbor Totoro"}
+  ];
+  const result = [
+    {"title": "Castle in the sky"},
+    {"title": "Grave of the Fireflies"},
+    {"title": "My Neighbor Totoro"},
+    {"title": "Whisper of the Heart"}];
+    expect(sortData(data, "title")).toEqual(result);
+
+});
+describe('sortData', () => {
+  it('is a function', () => {
+    expect(typeof sortData).toBe('function');
+  });
+  it('should order the result from Z to A', () => {
+    const data =  [
+      {"title": "Castle in the sky"},
+      {"title": "Grave of the Fireflies"},
+      {"title": "My Neighbor Totoro"},
+      {"title": "Whisper of the Heart"}];
+    const result = [
+    {"title": "Whisper of the Heart"},
+    {"title": "My Neighbor Totoro"},
+    {"title": "Grave of the Fireflies"},
+    {"title": "Castle in the sky"}];
+    expect(sortData(data, "title", "desc-movie")).toEqual(result);
 });
 });
-// });
-  // it('Debería retornar las películas de "Hiroyuki Morita".', () => {
-  //   const data = [
-  //     {
-  //       "director": "Hiroyuki Morita",
-  //     },
-  //     {
-  //       "director": "Hayao Miyazaki",
-  //     },
-  //   ];
-  //   const result = [
-  //     {
-  //       "title": "The Cat Returns",
-  //       "director": "Hiroyuki Morita",
-  //       "release_date": "2002",
-  //     },
-  //   ];
-  //   expect(filterData(data, "Hiroyuki Morita")).toEqual(result);
-  //   // expect(filterData(data,'Hayao Miyazaki')).toEqual(result);
-  // });
-// });
-
-// describe('example', () => {
-//   it('is a function', () => {
-//     expect(typeof example).toBe('function');
-//   });
-
-//   it('returns `example`', () => {
-//     expect(example()).toBe('example');
-//   });
-// });
+});
 
 
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
