@@ -105,7 +105,7 @@ directorOption.addEventListener("change", (event) => {
 //Escuchador opciones Order by
 const orderOption = document.querySelector(".combo-box-order");
 orderOption.addEventListener("change", (event) => {
-    const chosenOrder = sortData(data, event.target.value, event.target.value);
+    const chosenOrder = sortData(films, event.target.value, event.target.value);
     currentFilms = chosenOrder;
     printCards(chosenOrder);
     addModal();
