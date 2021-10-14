@@ -16,13 +16,13 @@
 
     <section class="container" id="landing-page">
       <section class="filter-menu">
+        <img class="home-button" src="img/home-button.png" alt="home-button">
         <section class="search">
-          <input class="search-movie" id="search-id" type="text" placeholder="Search" maxlength="30">
+          <input class="search-movie" autocomplete="on" id="search-id" type="text" placeholder="Search" maxlength="30">
         </section>
         <section class="director">
-          <select id="filter-by-director" class="combo-box">
+          <select id="filter-by-director" class="combo-box-director">
             <option value="director" selected hidden>Filter by Director</option>
-            <option value="all">All</option>
             <option value="Gorō Miyazaki">Gorō Miyazaki</option>
             <option value="Hayao Miyazaki">Hayao Miyazaki</option>
             <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
@@ -30,15 +30,15 @@
             <option value="Isao Takahata">Isao Takahata</option>
             <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
           </select>
-          
+
         </section>
         <section class="sort-by">
-          <select id="sort" class="combo-box-filters">
+          <select class="combo-box-order">
             <option value="sort-by" selected hidden>Order by</option>
-            <option value= "title" id="asc-movie">Title (A-Z)</option>
-            <option value= "title" id="desc-movie">Title (Z-A)</option>
-            <option value="release_date" id="newest-movie">Newest movies</option>
-            <option value="release_date" id="oldest-movie">Oldest movies</option>
+            <option value="title">Title (A-Z)</option>
+            <option value="desc-movie">Title (Z-A)</option>
+            <option value="newest-movie">Newest movies</option>
+            <option value="release_date">Oldest movies</option>
           </select>
         </section>
       </section>
@@ -56,10 +56,8 @@
   </main>
   <footer>
     <h4>© All rights reserved 2021 - Developers: Andrea Carrasco - Claudia Gómez</h4>
-    <audio controls autoplay loop>
-      <source src="audio/Moving_Castle.mp3">
-    </audio>
   </footer>
 </body>
 <script src="main.js" type="module"></script>
+
 </html>

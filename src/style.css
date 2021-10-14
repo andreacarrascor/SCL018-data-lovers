@@ -63,9 +63,14 @@ h1 {
     height: 10%;
     margin-top: 0%;
     padding: 12px;
+    align-items: center;
 }
 
-.combo-box, .combo-box-filters, input {
+.home-button {
+    height: 80px;
+}
+
+.combo-box-director, .combo-box-order, input {
     height: 50px;
     width: 300px;
     background-color: #44A082;
@@ -271,9 +276,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}
-audio {
-    justify-content: right;
 }
 
 
