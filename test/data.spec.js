@@ -28,8 +28,39 @@ describe('sortData', () => {
   it('is a function', () => {
     expect(typeof sortData).toBe('function');
   });
+  it('should order the result from A to Z', () => {
+    const data = [
+      {"title": "Whisper of the Heart"},
+      {"title": "Castle in the sky"},
+      {"title": "Grave of the Fireflies"},
+      {"title": "My Neighbor Totoro"}
+  ];
+  const result = [
+    {"title": "Castle in the sky"},
+    {"title": "Grave of the Fireflies"},
+    {"title": "My Neighbor Totoro"},
+    {"title": "Whisper of the Heart"}];
+    expect(sortData(data, "title")).toEqual(result);
 
 });
-
+describe('sortData', () => {
+  it('is a function', () => {
+    expect(typeof sortData).toBe('function');
+  });
+  it('should order the result from Z to A', () => {
+    const data =  [
+      {"title": "Castle in the sky"},
+      {"title": "Grave of the Fireflies"},
+      {"title": "My Neighbor Totoro"},
+      {"title": "Whisper of the Heart"}];
+    const result = [
+    {"title": "Whisper of the Heart"},
+    {"title": "My Neighbor Totoro"},
+    {"title": "Grave of the Fireflies"},
+    {"title": "Castle in the sky"}];
+    expect(sortData(data, "title", "desc-movie")).toEqual(result);
+});
+});
+});
 
 
