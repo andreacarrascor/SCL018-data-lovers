@@ -1,9 +1,12 @@
 import data from './data/ghibli/ghibli.js'
-import { filterData } from './data.js'
+import { filterData, sortData } from './data.js'
 
 let films = data.films;
+let currentFilms = films;
+
 let printCard = document.getElementById("film-card");
 
+//FUNCIÓN QUE AGREGA INFORMACIÓN A LAS CARTAS
 const drawCard = (films) => {
     return `
     <section class="films-container">
@@ -19,13 +22,19 @@ const drawCard = (films) => {
 
 };
 
-for (let i = 0; i < films.length; i++) {
-    printCard.innerHTML += drawCard(films[i]);
+//FUNCIÓN QUE PINTA CARTAS
+const printCards = (newFilms) => {
+    printCard.innerHTML = "";
+    newFilms.forEach((currentFilm) => {
+        printCard.innerHTML += drawCard(currentFilm);
+    })
 }
+printCards(films);
 
 
 const printModal = document.querySelector(".modal-container");
 
+//FUNCIÓN QUE AGREGA LA INFORMACIÓN AL MODAL
 const drawModal = (films) => {
 
     return `
@@ -60,90 +69,71 @@ const drawModal = (films) => {
     </section>`
 };
 
-// Query modal
-document.querySelectorAll(".films-container").forEach((element, index) => {
-    element.addEventListener("click", () => {
 
-        const modalHTML = drawModal(films[index]);
-        const modalContent = document.createElement('div');
-        modalContent.innerHTML = modalHTML;
+// FUNCION QUE PINTA MODAL
+const addModal = () => {
+    document.querySelectorAll(".films-container").forEach((element, index) => {
+        element.addEventListener("click", () => {
 
-        printModal.innerHTML = "";
-        printModal.appendChild(modalContent);
-        document.querySelector(".modal").style.display = 'block';
-        //Cierra el modal (X)
-        const close = document.getElementsByClassName("close")[0];
-        close.addEventListener("click", () => {
-            document.querySelector(".modal").style.display = 'none';
+            const modalHTML = drawModal(currentFilms[index]);
+            const modalContent = document.createElement('div');
+            modalContent.innerHTML = modalHTML;
+
+            printModal.innerHTML = "";
+            printModal.appendChild(modalContent);
+            document.querySelector(".modal").style.display = 'block';
+            //Cierra el modal (X)
+            const close = document.getElementsByClassName("close")[0];
+            close.addEventListener("click", () => {
+                document.querySelector(".modal").style.display = 'none';
+            })
         })
-    })
-});
+    });
+}
+addModal();
 
-
-//escuchador de opciones director//traer values de las option
-let directorOption = document.querySelector(".combo-box");
-
+//Escuchador de opciones director
+const directorOption = document.querySelector(".combo-box-director");
 directorOption.addEventListener("change", (event) => {
-    // console.log(event.target.value);
+
     const chosenDirector = filterData(data, event.target.value);
-    // document.querySelector(".film-card").style.display = 'block';
-    const print = (films) => {
-        printCard.innerHTML = "";
-        for (let i = 0; i < films.length; i++) {
-            // document.querySelector(".film-card").classList.add("test");
-            printCard.innerHTML += drawCard(films[i]);
-
-            document.querySelectorAll(".films-container").forEach((element, index) => {
-                element.addEventListener("click", () => {
-
-                    const modalHTML = drawModal(films[index]);
-                    const modalContent = document.createElement('div');
-                    modalContent.innerHTML = modalHTML;
-
-                    printModal.innerHTML = "";
-                    printModal.appendChild(modalContent);
-                    document.querySelector(".modal").style.display = 'block';
-                    //Cierra el modal (X)
-                    const close = document.getElementsByClassName("close")[0];
-                    close.addEventListener("click", () => {
-                        document.querySelector(".modal").style.display = 'none';
-                    })
-                })
-            });
-
-        }
-    }
-    print(chosenDirector);
-    // console.log(chosenDirector)
+    currentFilms = chosenDirector;
+    printCards(chosenDirector);
+    addModal();
 });
 
-const home = document.querySelector(".home-button");
-
-home.addEventListener("click", function () {
-    location.reload();
-
+//Escuchador opciones Order by
+const orderOption = document.querySelector(".combo-box-order");
+orderOption.addEventListener("change", (event) => {
+    const chosenOrder = sortData(data, event.target.value, event.target.value);
+    currentFilms = chosenOrder;
+    printCards(chosenOrder);
+    addModal();
 })
 
-//Función search, bug de modal
-const search = document.getElementById("search-id");
+//Escuchador para refrescar a la pantalla inicial
+const home = document.querySelector(".home-button");
+home.addEventListener("click", function () {
+    currentFilms = films;
+    printCards(currentFilms);
+    addModal();
+})
 
+//Escuchador casilla búsqueda (search)
+const search = document.getElementById("search-id");
 search.addEventListener("keydown", (key) => {
     if (key.key === "Enter") {
         const text = search.value.toLowerCase();
         const titleFilter = films.filter(x => (x.title.toLowerCase()).includes(text));
         const directorFilter = films.filter(x => (x.director.toLowerCase()).includes(text));
-
+        
         if (titleFilter.length > 0) {
-            printCard.innerHTML = "";
-            for (let i = 0; i < titleFilter.length; i++) {
-                printCard.innerHTML += drawCard(titleFilter[i]);
-            }
+            printCards(titleFilter);
+            addModal();
         }
         else if (directorFilter.length > 0) {
-            printCard.innerHTML = "";
-            for (let i = 0; i < directorFilter.length; i++) {
-                printCard.innerHTML += drawCard(directorFilter[i]);
-            }
+            printCards(directorFilter);
+            addModal();
         }
         else {
             alert("Película no encontrada");

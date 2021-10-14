@@ -68,10 +68,9 @@ h1 {
 
 .home-button {
     height: 80px;
-    
 }
 
-.combo-box, .combo-box-filters, input {
+.combo-box-director, .combo-box-order, input {
     height: 50px;
     width: 300px;
     background-color: #44A082;

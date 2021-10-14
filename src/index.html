@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
     <h1>GHIBLI'S COLLECTION</h1>
@@ -23,7 +21,7 @@
           <input class="search-movie" autocomplete="on" id="search-id" type="text" placeholder="Search" maxlength="30">
         </section>
         <section class="director">
-          <select id="filter-by-director" class="combo-box">
+          <select id="filter-by-director" class="combo-box-director">
             <option value="director" selected hidden>Filter by Director</option>
             <option value="Gorō Miyazaki">Gorō Miyazaki</option>
             <option value="Hayao Miyazaki">Hayao Miyazaki</option>
@@ -35,12 +33,12 @@
 
         </section>
         <section class="sort-by">
-          <select id="sort" class="combo-box-filters">
+          <select class="combo-box-order">
             <option value="sort-by" selected hidden>Order by</option>
-            <option value="title" id="asc-movie">Title (A-Z)</option>
-            <option value="title" id="desc-movie">Title (Z-A)</option>
-            <option value="release_date" id="newest-movie">Newest movies</option>
-            <option value="release_date" id="oldest-movie">Oldest movies</option>
+            <option value="title">Title (A-Z)</option>
+            <option value="desc-movie">Title (Z-A)</option>
+            <option value="newest-movie">Newest movies</option>
+            <option value="release_date">Oldest movies</option>
           </select>
         </section>
       </section>
