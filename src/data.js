@@ -1,8 +1,5 @@
-export const filterData = (data, selectedDirector) => {
-
-    const movies = data.films;
-    const resultFilter = movies.filter(movie => movie.director === selectedDirector);
-    return resultFilter;
+export const filterData = (films, selectedDirector) => {
+    return films.filter(movie => movie.director === selectedDirector);
 }
 
 export const sortData = (data, sortBy, sortOrder) => {
