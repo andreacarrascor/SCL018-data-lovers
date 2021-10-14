@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js'
-import { filterData, sortData } from './data.js'
+import { filterData, sortData, searchData } from './data.js'
 
 let films = data.films;
 let currentFilms = films;
@@ -120,26 +120,39 @@ home.addEventListener("click", function () {
 })
 
 //Escuchador casilla búsqueda (search)
-const search = document.getElementById("search-id");
-search.addEventListener("keydown", (key) => {
-    if (key.key === "Enter") {
-        const text = search.value.toLowerCase();
-        const titleFilter = films.filter(x => (x.title.toLowerCase()).includes(text));
-        const directorFilter = films.filter(x => (x.director.toLowerCase()).includes(text));
+
+// search.addEventListener("keydown", (key) => {
+//     if (key.key === "Enter") {
+//         const text = search.value.toLowerCase();
+//         const titleFilter = films.filter(x => (x.title.toLowerCase()).includes(text));
+//         const directorFilter = films.filter(x => (x.director.toLowerCase()).includes(text));
         
-        if (titleFilter.length > 0) {
-            printCards(titleFilter);
-            addModal();
-        }
-        else if (directorFilter.length > 0) {
-            printCards(directorFilter);
-            addModal();
-        }
-        else {
-            alert("Película no encontrada");
-        }
-    }
+//         if (titleFilter.length > 0) {
+//             printCards(titleFilter);
+//             addModal();
+//         }
+//         else if (directorFilter.length > 0) {
+//             printCards(directorFilter);
+//             addModal();
+//         }
+//         else {
+//             alert("Película no encontrada");
+//         }
+
+//     }
+// });
+const search = document.getElementById("search-id");
+search.addEventListener('keyup', () => {
+    currentFilms = searchData(films, 'title', search.value.toLowerCase());
+    printCards(currentFilms);
+    addModal();
 });
+
+// search.addEventListener('keyup', () => {
+//     currentFilms = searchData(films, 'director', search.value.toLowerCase());
+//     printCards(currentFilms);
+//     addModal();
+// });
 
 
 

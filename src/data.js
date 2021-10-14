@@ -5,9 +5,7 @@ export const filterData = (data, selectedDirector) => {
     return resultFilter;
 }
 
-
 export const sortData = (data, sortBy, sortOrder) => {
-
     const dataGhibli = data.films;
     const resultSort = dataGhibli.sort(function (a, b) {
         if (a[sortBy] > b[sortBy]) {
@@ -27,3 +25,8 @@ export const sortData = (data, sortBy, sortOrder) => {
     return resultSort;
 
 }
+
+export const searchData = (data, condition, value) => {
+    return data.filter(item => item[condition].toLowerCase().includes(value.toLowerCase()));
+}
+
