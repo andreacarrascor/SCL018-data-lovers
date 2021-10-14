@@ -96,7 +96,7 @@ addModal();
 const directorOption = document.querySelector(".combo-box-director");
 directorOption.addEventListener("change", (event) => {
 
-    const chosenDirector = filterData(data, event.target.value);
+    const chosenDirector = filterData(films, event.target.value);
     currentFilms = chosenDirector;
     printCards(chosenDirector);
     addModal();
@@ -119,40 +119,12 @@ home.addEventListener("click", function () {
     addModal();
 })
 
-//Escuchador casilla búsqueda (search)
-
-// search.addEventListener("keydown", (key) => {
-//     if (key.key === "Enter") {
-//         const text = search.value.toLowerCase();
-//         const titleFilter = films.filter(x => (x.title.toLowerCase()).includes(text));
-//         const directorFilter = films.filter(x => (x.director.toLowerCase()).includes(text));
-        
-//         if (titleFilter.length > 0) {
-//             printCards(titleFilter);
-//             addModal();
-//         }
-//         else if (directorFilter.length > 0) {
-//             printCards(directorFilter);
-//             addModal();
-//         }
-//         else {
-//             alert("Película no encontrada");
-//         }
-
-//     }
-// });
 const search = document.getElementById("search-id");
 search.addEventListener('keyup', () => {
     currentFilms = searchData(films, 'title', search.value.toLowerCase());
     printCards(currentFilms);
     addModal();
 });
-
-// search.addEventListener('keyup', () => {
-//     currentFilms = searchData(films, 'director', search.value.toLowerCase());
-//     printCards(currentFilms);
-//     addModal();
-// });
 
 
 
