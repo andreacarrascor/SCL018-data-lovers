@@ -8,7 +8,7 @@
 * [4. Prototipos](#4-prototipos)
 * [5. Test de Usabilidad](#5-test-de-usabilidad)
 * [6. Página Finalizada](#6-página-finalizada)
-* [7. Definición de Terminado](#7-definición-de-terminado)
+
 
 ***
 ## 1. Definición  
@@ -72,6 +72,18 @@ Si el usuario desea visualizar las cartas de las películas en orden de acuerdo 
 ## 3. Historias de usuario 
    
 ![](src/img/criterios-historias-usuario.jpg)
+
+Definición de terminado  
+
+- El código cumple con el diseño propuesto en el prototipo.
+- El código está en la rama Main en el repositorio de GitHub.
+- El código pasa las pruebas unitarias correspondientes.
+- El código ha sido construido en modo pair-programming.
+- El código ha sido revisado por integrantes del bootcamp (Code-Review).
+- Las historias han sido testeada por usuarios que conocen la temática y se han incorporado mejoras de acuerdo a los feedback recibidos.
+- La funcionalidad de la página está acorde a las necesidades de los usuarios.
+- El código ha sido ejecutado siguiendo buenas prácticas de programación. 
+
 ## 4. Prototipos
 ### Prototipos de baja fidelidad
 *Landing*
@@ -116,6 +128,7 @@ y se llegó a la conclusión de que era necesario modificar algunos elementos pa
 - Se agregó una opción que ordene las películas de acuerdo a la fecha de estreno.
 - Se agregó un botón home para volver a la página de inicio facilmente.
 - Se modifican los elementos de la barra de navegación en la versión mobile para que estos colapsen en columna y que se desplieguen las opciones del combobox sin interferir en la correcta lectura de los otros filtros.
+
 ## 6. Página Finalizada
 
 *Landing Page*
@@ -133,15 +146,3 @@ y se llegó a la conclusión de que era necesario modificar algunos elementos pa
 *Ordenando información de la Z a la A*
 
 ![](src/img/Title-Z-A.png)
-
-
-## 7. Definición de terminado  
-
-- El código cumple con el diseño propuesto en el prototipo.
-- El código está en la rama Main en el repositorio de GitHub.
-- El código pasa las pruebas unitarias correspondientes.
-- El código ha sido construido en modo pair-programming.
-- El código ha sido revisado por integrantes del bootcamp (Code-Review).
-- Las historias han sido testeada por usuarios que conocen la temática y se han incorporado mejoras de acuerdo a los feedback recibidos.
-- La funcionalidad de la página está acorde a las necesidades de los usuarios.
-- El código ha sido ejecutado siguiendo buenas prácticas de programación. 
