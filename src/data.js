@@ -25,4 +25,5 @@ export const sortData = (data, sortBy, sortOrder) => {
 export const searchData = (data, condition, value) => {
     return data.filter(item => item[condition].toLowerCase().includes(value.toLowerCase()));
 }
+    
 
