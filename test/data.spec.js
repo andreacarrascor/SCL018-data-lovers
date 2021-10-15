@@ -5,10 +5,18 @@ describe('searchData', () => {
     expect(typeof searchData).toBe('function')
   })
 
-  it('Should return "Castle in the Sky" when searching "Castle in the Sky"', () => {
-    const data = [{ title: 'Castle in the Sky' }]
-    const result = [{ title: 'Castle in the Sky' }]
-    expect(searchData(data, 'title', 'Castle in the Sky')).toEqual(result)
+  it('Should return "Castle in the Sky" and "Howls Moving Castle"  when searching "Castle"', () => {
+    const data = [
+      { title: "Castle in the Sky" },
+      { title: "My Neighbor Totoro" },
+      { title: "Howl's Moving Castle" },
+      { title: 'Whisper of the Heart' },
+    ]
+    const result = [
+      { title: "Castle in the Sky" },
+      { title: "Howl's Moving Castle" }
+    ]
+    expect(searchData(data, 'title', 'castle')).toEqual(result)
   })
 }),
 
@@ -18,7 +26,12 @@ describe('filterData', () => {
   })
 
   it('should return the result to director "Hayao Miyazaki"', () => {
-    const data = [{ director: 'Hayao Miyazaki' }]
+    const data = [
+      { director: 'Hayao Miyazaki' },
+      { director: 'Isao Takahata' },
+      { director: 'Hiroyuki Morita' },
+      { director: 'Yoshifumi Kondō' },
+    ]
     const result = [{ director: 'Hayao Miyazaki' }]
     expect(filterData(data, 'Hayao Miyazaki')).toEqual(result)
   })
@@ -74,5 +87,5 @@ describe('sortData', () => {
       { title: 'Only Yesterday' }
     ]
       expect(sortData(data, 'release_date', 'newest-movie')).toEqual(result)
-  })
+  }) 
 });
