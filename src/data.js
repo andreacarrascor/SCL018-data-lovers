@@ -15,9 +15,6 @@ export const sortData = (data, sortBy, sortOrder) => {
     if (sortOrder === 'desc-movie') {
         return resultSort.reverse();
     }
-    else if (sortOrder === 'newest-movie') {
-        return resultSort.reverse();
-    }
     return resultSort;
 
 }
