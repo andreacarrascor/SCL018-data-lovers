@@ -18,7 +18,6 @@ body {
 body::before {
     content: "";
     background-image: url(img/background.png);
-
     position: absolute;
     top: 0px;
     right: 0px;
@@ -47,11 +46,12 @@ h1 {
     height: 100%;
 }
 
-.container {
-    position: relative;
+.home-button-mobile {
+    display: none;
 }
 
 .filter-menu {
+    position: relative;
     display: flex;
     flex-flow: column wrap;
     flex-wrap: wrap;
@@ -70,7 +70,7 @@ h1 {
     height: 80px;
 }
 
-.combo-box-director, .combo-box-order, input {
+.combo-box-director, .combo-box-order, .search-movie {
     height: 50px;
     width: 300px;
     background-color: #44A082;
@@ -112,11 +112,9 @@ h1 {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     color: white;
-    /* width: 17%; */
+    width: 17%;
     box-shadow: 6px 6px 9px #000000;
-    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr))
 }
 /* NUEVO
 Hover card al pasar el mouse por encima */
@@ -262,10 +260,6 @@ Hover card al pasar el mouse por encima */
     font-family: Header_Font;
     font-size: 20px;
 }
-/* .test {
-
-    display: flex;
-} */
 
 footer {
     position: relative;
@@ -278,10 +272,61 @@ footer {
     justify-content: space-evenly;
 }
 
-
-/* RECURSO PARA HACER LA PÁGINA RESPONSIVA */
-/* @media (min-width: 950px){
-    .container {
+@media (max-width: 720px) and (min-width: 360px) {
+    header {
+        justify-content: center;
+        height: 60px;
     }
-} */
+    h1 {
+        display: none;
+    }
+    .home-button {
+        display: none;
+    }
+    .home-button-mobile {
+        display: block;
+        height: 100%;
+    }
+    .container-home-button {
+        margin: 0%;
+    }
+    .logo {
+        height: 100%;
+    }
+    .combo-box-director, .combo-box-order {
+        height: 25px;
+        width: 150px;
+        font-size: 11px ;
+    }
+    .search-movie {
+        font-size: 11px;
+        margin-bottom: 2%;
+        height: 25px;
+        width: 305px;
+    }
+    .films-container {
+        width: 45%;
+        margin: 2%;
+        }
+    .poster {
+        height: 96px;
+        width: 75px;
+    }
+    .card-container-inner {
+        height: 70%;
+        width: 50%;
+    }
+    .card-title {
+        font-size: 8px;
+    }
+    .card-director, .card-year {
+        font-size: 7px;
+    }
+    footer {
+        justify-content: center;
+        font-size: 10px;
+    }
+    
+}
+
 

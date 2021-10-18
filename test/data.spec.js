@@ -72,20 +72,4 @@ describe('sortData', () => {
     ]
       expect(sortData(data, 'title', 'desc-movie')).toEqual(result)
   })
-
-  it('should order the result from newest to oldies movies', () => {
-    const data = [
-      { title: 'Only Yesterday' },
-      { title: 'My neighbors the Yamadas' },
-      { title: 'Ponyo of the Cliff by the sea' },
-      { title: 'When Marnie Was There' }
-    ]
-    const result = [
-      { title: 'When Marnie Was There' },
-      { title: 'Ponyo of the Cliff by the sea' },
-      { title: 'My neighbors the Yamadas' },
-      { title: 'Only Yesterday' }
-    ]
-      expect(sortData(data, 'release_date', 'newest-movie')).toEqual(result)
-  }) 
 });

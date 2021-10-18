@@ -85,6 +85,7 @@ Definición de terminado
 - El código ha sido ejecutado siguiendo buenas prácticas de programación. 
 
 ## 4. Prototipos
+
 ### Prototipos de baja fidelidad
 *Landing*
 
@@ -93,6 +94,7 @@ Definición de terminado
 *Vista desplegando información*
 
 ![](src\img\Prototipo_baja_fidelidad2.png)
+
 ### Prototipos de alta fidelidad
 *Tamaño Desktop, Landing*
 
