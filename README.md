@@ -8,6 +8,7 @@
 * [4. Prototipos](#4-prototipos)
 * [5. Test de Usabilidad](#5-test-de-usabilidad)
 * [6. Página Finalizada](#6-página-finalizada)
+* [7. Link al sitio](#7-link-al-sitio)
 
 
 ***
@@ -71,7 +72,7 @@ Si el usuario desea visualizar las cartas de las películas en orden de la A a l
 Si el usuario desea visualizar las cartas de las películas en orden de acuerdo a la fecha de estreno, podrá hacerlo seleccionando la opción correspondiente en el combobox asignado para ello en el menú principal.
 ## 3. Historias de usuario 
    
-![](src/img/criterios-historias-usuario.jpg)
+![](src/img/criterios-historias-usuario.png)
 
 Definición de terminado  
 
@@ -89,11 +90,11 @@ Definición de terminado
 ## Prototipos de baja fidelidad
 *Landing*
 
-![](src\img\Prototipo_baja_fidelidad.png)
+![](src/img/Prototipo_baja_fidelidad.png)
 
 *Vista desplegando información*
 
-![](src\img\Prototipo_baja_fidelidad2.png)
+![](src/img/Prototipo_baja_fidelidad2.png)
 
 ## Prototipos de alta fidelidad
 *Tamaño Desktop, Landing*
@@ -148,3 +149,8 @@ y se llegó a la conclusión de que era necesario modificar algunos elementos pa
 *Ordenando información de la Z a la A*
 
 ![](src/img/Title-Z-A.png)
+
+## 7. Link al sitio
+
+https://andreacarrascor.github.io/SCL018-data-lovers/src/
+
