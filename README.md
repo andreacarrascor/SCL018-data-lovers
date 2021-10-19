@@ -86,7 +86,7 @@ Definición de terminado
 
 ## 4. Prototipos
 
-### Prototipos de baja fidelidad
+## Prototipos de baja fidelidad
 *Landing*
 
 ![](src\img\Prototipo_baja_fidelidad.png)
@@ -95,7 +95,7 @@ Definición de terminado
 
 ![](src\img\Prototipo_baja_fidelidad2.png)
 
-### Prototipos de alta fidelidad
+## Prototipos de alta fidelidad
 *Tamaño Desktop, Landing*
 
 ![](src/img/Tamaño-Desktop.png)
