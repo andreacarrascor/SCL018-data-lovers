@@ -114,10 +114,10 @@ orderOption.addEventListener("change", (event) => {
 //Escuchador para refrescar a la pantalla inicial
 const home = document.querySelector(".home-button");
 home.addEventListener("click", function () {
-    // currentFilms = films;
-    // printCards(currentFilms);
-    // addModal();
-    location.reload();
+    currentFilms = films;
+    printCards(currentFilms);
+    addModal();
+    // location.reload();
 })
 
 const search = document.getElementById("search-id");
